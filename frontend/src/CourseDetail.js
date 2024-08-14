@@ -133,28 +133,27 @@ function CourseDetail() {
         <input type="radio" id="evening" name="session-time" value="Evening" />
         <label htmlFor="evening">Evening</label>
       </div>
-      <div className = "progress-update">
-        <div style={{ marginTop: '80px' }}></div>
-        <div style={{ marginLeft: '-30px' }}></div>
-        <div style={{ marginBottom: '20px' }}></div>
-        <label><h3>Progress:</h3> {course.progress}</label>
-        <input
-          type="range"
-          min="0"
-          max="100"
-          defaultValue={progress}
-          onChange={event => { 
-            console.log(`Current Progress: ${event.target.value}%`);
-          }}
-        />
-        <button onClick={(e) => {
-          const input = e.target.previousElementSibling;
-          updateProgress(course.id, input.value);
-        }}>
-          Update
-        </button>
-      </div>
-      <div style={{ marginBottom: '-20px' }}></div>
+
+    {isEnrolled && (
+                  <div className="progress-update">
+                    <h3>Progress:</h3> 
+                    <label>{course.progress}</label>
+                    <input
+                      type="range"
+                      min="0"
+                      max="100"
+                      defaultValue={progress}
+                      onChange={event => console.log(`Current Progress: ${event.target.value}%`)}
+                    />
+                    <button onClick={(e) => {
+                      const input = e.target.previousElementSibling;
+                      updateProgress(course.id, input.value);
+                    }}>
+                      Update
+                    </button>
+                  </div>
+                )}
+        
       <h3>Reviews</h3>
       <input type="text" placeholder="Search reviews" className="search-reviews" />
       <div className="review-container">
