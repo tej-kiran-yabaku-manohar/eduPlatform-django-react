@@ -15,7 +15,7 @@ pip install djangorestframework
 pip install django-cors-headers
 ```
 
-In the backend folder directory, run below commands
+In the virtual environment, Go to the backend folder directory, run below commands
 
 
 ```shell
