@@ -19,9 +19,9 @@ In the virtual environment, Go to the backend folder directory, run below comman
 
 
 ```shell
-python manage.py makemigrations
-python manage.py migrate
-python manage.py runserver
+python3 manage.py makemigrations
+python3 manage.py migrate
+python3 manage.py runserver
 ```
 
 In the frontend folder directory, run below commands
